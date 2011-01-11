@@ -1,9 +1,10 @@
 // ==UserScript==
-// @name           FriendShipRequester
-// @author		   İsmail Taha AYKAÇ
-// @author-mail	   ismailtaha@gmail.com
-// @namespace      https://put.io
-// @include        https://put.io/friendship
+// @name			FriendShipRequester
+// @author			İsmail Taha AYKAÇ
+// @author-mail		ismailtaha@gmail.com
+// @namespace		https://put.io
+// @include			https://put.io/friendship
+// @version			v0.1
 //
 // This script is intended to send request to all of put.io users to increase
 // the sharing in the system.
@@ -18,11 +19,11 @@ $ = unsafeWindow.$j;
 function requestAllOnThePage(){
 	//sends request all strangers in the current strangers page
 	$('#strangers-box .friendsBox a').click();
-	
+
 	//refresh the active strangers page to eliminate the request sent users
-    $('#strangers-box .strangers-pager .activepager a').click();
-    
-    //After 10 seconds control if the current strangers page has users left
+	$('#strangers-box .strangers-pager .activepager a').click();
+
+	//After 10 seconds control if the current strangers page has users left
 	setTimeout(function(){
 		if($('#strangers-box .friendsBox a').length == 0){
 			//clearInterval(intervalId);
